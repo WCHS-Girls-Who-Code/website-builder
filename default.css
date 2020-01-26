@@ -1,0 +1,17 @@
+h1 {
+	color:#190229;
+	text-decoration:underline;
+}
+body {
+	background-color:#fff2de;
+	font-family:helvetica,arial;
+	padding:10px
+}
+@font-face {
+   font-family:  'Quicksand', sans-serif;
+   src: url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+}
+
+* {
+   font-family:  'Quicksand', sans-serif;
+}
