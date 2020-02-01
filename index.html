@@ -1,29 +1,198 @@
-<html>
-<head>
-	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="us">
+	<head>
+		<meta charset="utf-8">
+		<title>Churchill HS GWC Website Builder</title>
+		<link href="jquery-ui.css" rel="stylesheet">
+		<style>
+body{
+	background-color:#fff2de;
+	font-family: "Trebuchet MS", sans-serif;
+	margin: 50px;
+}
 
-		<link rel="stylesheet" type="text/css" href="default.css">
-</head>
-<body>
-	<h1>Churchill HS GWC Website Builder</h1>
-	<p>Lorem ipsum blah blah i entrust to you it took longer to make this website itself than it would to make this website out of the website maker</p>
-	<div>
-	<!--
-	 >i neglect to use a proper grid css model
-	 >am burned at a stake
-	 >not building a real web app and making something cursed in javascript
-	 >ah yes, web development
-	-->
-	<div style="float:left">
-		<textarea rows="20%"  cols="50%" placeholder="Hypoherically this makes no sense to have atall, but a code window is the easiest form to plot in here for the time being. I don't know how to go about this so I'm just going to implement the methods by which I'm acquiesed." >
-		</textarea><br>
-		<input type="button" label="update">
-	</div>
+	select {
+		width: 200px;
+	}
+		</style>
+	</head>
+	<body>
 
-	<div width="500px" height="500px" id="render" style="float:right">
-<iframe srcdoc=""></iframe>	
-	</div>
+		<h1>Churchill HS GWC Website Builder</h1>
+		<div id="main-container" style="width:50%;float:left">
+			<!-- Tabs -->
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1">Visual</a></li>
+					<li><a href="#tabs-2">Code</a></li>
+					<li><a href="#tabs-3">Settings</a></li>
+				</ul>
+				<div id="tabs-1">
+					<h2 class="demoheaders">elements</h2>
+					<div id="accordion">
+						<h3>body</h3>
+						<div>
+							Background Color: <input class="jscolor {onFineChange:'update_bbcolor(this)'}" value="ab2567"><br>
+							Color of font: <input class="jscolor {onFineChange:'update_bcolor(this)'}" value="ab2567"><br>
+							Link colors: <input class="jscolor {onFineChange:'update_blink(this)'}" value="ab2567"><br>
+						</div>
+						<h3>list</h3>
+						<div>
+							Color: <input class="jscolor {onFineChange:'update_lcolor(this)'}" value="ab2567"><br>
+							text: <input type="text"><br>							
+<input type="button" onclick="" value="new paragraph">
+						</div>
+						<h3>paragraph</h3>
+						<div>
+							Color: <input class="jscolor {onFineChange:'update_pcolor(this)'}" value="ab2567"><br>
+							text: <input type="text"><br>							
+							font size: <input type="number"><br>
+<input type="button" onclick="" value="new paragraph">
+						</div>
+					</div>
 
-	</div>	
-</body>
+				</div>
+				<div id="tabs-2">so hypothetically the code representation is here</div>
+				<div id="tabs-3">There are no settings yet ):</div>
+			</div>
+			<!--download-->
+			<form onsubmit="download(this['name'].value)">
+				<input type="text" name="name" value="website.html">
+				<input type="submit" value="Download">
+			</form>
+		</div>
+
+		<iframe style="float:right;width:45%;height:500px" id="foo"></iframe>
+<script src="jscolor.js"></script>
+		<script src="builder.js"></script>
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+		<script>
+
+			$( "#accordion" ).accordion();
+
+
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+
+
+
+$( "#button" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+
+
+
+$( "#radioset" ).buttonset();
+
+
+
+$( "#controlgroup" ).controlgroup();
+
+
+
+$( "#tabs" ).tabs();
+
+
+
+$( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+
+
+
+$( "#datepicker" ).datepicker({
+	inline: true
+});
+
+
+
+$( "#slider" ).slider({
+	range: true,
+	values: [ 17, 67 ]
+});
+
+
+
+$( "#progressbar" ).progressbar({
+	value: 20
+});
+
+
+
+$( "#spinner" ).spinner();
+
+
+
+$( "#menu" ).menu();
+
+
+
+$( "#tooltip" ).tooltip();
+
+
+
+$( "#selectmenu" ).selectmenu();
+
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+		</script>
+	</body>
 </html>
